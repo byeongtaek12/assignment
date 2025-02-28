@@ -48,7 +48,7 @@ public class App {
 
                 System.out.println("저장소에 저장된 첫 번째 값을 삭제를 원하시면 1, 아니면 0을 써주세요");
                 int s = scanner.nextInt();
-                if (s==1) {
+                if (s == 1) {
                     cal.removeResult();
                     cal.showResultSave();
                 }
