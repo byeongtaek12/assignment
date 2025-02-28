@@ -32,8 +32,8 @@ public class App {
                 while (true) {
                     System.out.print("사칙연산 기호를 입력하세요: ");
                     char oper = scanner.next().charAt(0);
-                    result = Calculator.calculate(x, oper, y);
-                    if (result.equals('x')) {
+                    result = Calculator.calculate(x, oper, y); // 계산 값을 반환
+                    if (result.equals('x')) { // 예외 발생시 문자 x값이 반환되어 실행
                         continue;
                     }
                     System.out.println("계산 값: " + result);
@@ -41,7 +41,7 @@ public class App {
                 }
 
                 System.out.println("값을 저장소에 저장합니다");
-                List<Object> newResultSave = cal.getResultSave();
+                List<Object> newResultSave = cal.getResultSave(); // 튜터님 개선 사항 적용x
                 newResultSave.add(result);
                 cal.setResultSave(newResultSave);
                 cal.showResultSave();
