@@ -33,6 +33,13 @@ public class Calculator {
     }
 
     public void removeResult() {
+        if (resultSave.isEmpty()){
+            System.out.println("저장소가 비어있습니다");
+        }
+        resultSave.remove(0);
+    }
 
+    public void showResultSave() {
+        System.out.println(resultSave);
     }
 }

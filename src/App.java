@@ -9,8 +9,8 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         boolean exit = true;
         while (exit) {
-            long x = 0;
-            long y = 0;
+            long x;
+            long y;
             Object result;
             while (true) {
                 try {
@@ -38,17 +38,25 @@ public class App {
                     System.out.println("계산 값: " + result);
                     break;
                 }
+
                 System.out.println("값을 저장소에 저장합니다");
                 List<Object> newResultSave = cal.getResultSave();
                 newResultSave.add(result);
                 cal.setResultSave(newResultSave);
+                cal.showResultSave();
+                System.out.println("저장소에 저장된 첫 번째 값을 삭제를 원하시면 1, 아니면 0을 써주세요");
+                int s = scanner.nextInt();
+                if (s==1) {
+                    cal.removeResult();
+                    cal.showResultSave();
+                }
                 break;
             }
 
             scanner.nextLine();
             System.out.println("더 계산하시겠습니까? (exit 입력시 종료, 다른 입력시 계속)");
-            String s = scanner.nextLine();
-            if (s.equals("exit")) {
+            String q = scanner.nextLine();
+            if (q.equals("exit")) {
                 exit = false;
                 System.out.println("종료하겠습니다");
             }
