@@ -41,16 +41,14 @@ public class App {
                 }
 
                 System.out.println("값을 저장소에 저장합니다");
-                List<Object> newResultSave = cal.getResultSave(); // 튜터님 개선 사항 적용x
-                newResultSave.add(result);
-                cal.setResultSave(newResultSave);
-                cal.showResultSave();
+                cal.setResultSave(result);
+                System.out.println(cal.getResultSave());
 
                 System.out.println("저장소에 저장된 첫 번째 값을 삭제를 원하시면 1, 아니면 0을 써주세요");
                 int s = scanner.nextInt();
                 if (s == 1) {
                     cal.removeResult();
-                    cal.showResultSave();
+                    System.out.println(cal.getResultSave());
                 }
                 break;
             }

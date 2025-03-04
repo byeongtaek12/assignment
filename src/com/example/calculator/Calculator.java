@@ -30,8 +30,8 @@ public class Calculator {
         return this.resultSave;
     }
 
-    public void setResultSave(List<Object> resultSave) {
-        this.resultSave = resultSave;
+    public void setResultSave(Object result) {
+        this.resultSave.add(result);
     }
 
     public void removeResult() {
@@ -39,9 +39,5 @@ public class Calculator {
             System.out.println("저장소가 비어있습니다");
         }
         resultSave.remove(0);
-    }
-
-    public void showResultSave() {
-        System.out.println(resultSave);
     }
 }
