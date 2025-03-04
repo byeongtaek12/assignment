@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Number> resultSave = new ArrayList<>();
+    private final List<Number> resultSave = new ArrayList<>();
 
     public Number calculate(long x, char oper, long y) {
         return switch (oper) {
