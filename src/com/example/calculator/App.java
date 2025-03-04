@@ -11,7 +11,7 @@ public class App {
         while (exit) {
             long x;
             long y;
-            Object result;
+            Number result;
             while (true) {
                 try {
                     System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
@@ -29,14 +29,15 @@ public class App {
                     continue;
                 }
                 while (true) {
-                    System.out.print("사칙연산 기호를 입력하세요: ");
-                    char oper = scanner.next().charAt(0);
-                    result = cal.calculate(x, oper, y); // 계산 값을 반환
-                    if (result.equals('x')) { // 예외 발생시 문자 x값이 반환되어 실행
-                        continue;
+                    try{
+                        System.out.print("사칙연산 기호를 입력하세요: ");
+                        char oper = scanner.next().charAt(0);
+                        result = cal.calculate(x, oper, y); // 계산 값을 반환
+                        System.out.println("계산 값: " + result);
+                        break;
+                    }catch (ArithmeticException | IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
                     }
-                    System.out.println("계산 값: " + result);
-                    break;
                 }
 
                 System.out.println("값을 저장소에 저장합니다");

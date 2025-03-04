@@ -4,33 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Object> resultSave = new ArrayList<>();
+    private List<Number> resultSave = new ArrayList<>();
 
-    public Object calculate(long x, char oper, long y) {
+    public Number calculate(long x, char oper, long y) {
         return switch (oper) {
             case '+' -> x + y;
             case '-' -> x - y;
             case '*' -> x * y;
             case '/' -> {
                 if (y == 0) {
-//                    System.out.println("0으로 나눌 수 없으므로 x를 반환합니다");
-                    yield 'x';
+                    throw new ArithmeticException("0으로 나눌 수 없습니다. 다시 입력해주세요");
                 }
                 yield x / (double) y;
             }
-            default -> {
-                System.out.println("연산기호가 잘못됐으므로 x를 반환합니다");
-                yield 'x';
-            }
+            default -> throw new IllegalArgumentException("연산기호가 잘못됐습니다. 다시 입력해주세요");
+
         };
     }
 
 
-    public List<Object> getResultSave() {
+    public List<Number> getResultSave() {
         return this.resultSave;
     }
 
-    public void setResultSave(Object result) {
+    public void setResultSave(Number result) {
         this.resultSave.add(result);
     }
 
