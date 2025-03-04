@@ -7,7 +7,7 @@ public class Calculator {
     private List<Object> resultSave = new ArrayList<>();
 
     public static Object calculate(long x, char oper, long y) {
-        Object result = switch (oper) {
+        return switch (oper) {
             case '+' -> x + y;
             case '-' -> x - y;
             case '*' -> x * y;
@@ -23,8 +23,8 @@ public class Calculator {
                 yield 'x';
             }
         };
-        return result;
     }
+
 
     public List<Object> getResultSave() {
         return this.resultSave;
