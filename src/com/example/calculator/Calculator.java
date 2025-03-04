@@ -6,14 +6,14 @@ import java.util.List;
 public class Calculator {
     private List<Object> resultSave = new ArrayList<>();
 
-    public static Object calculate(long x, char oper, long y) {
+    public Object calculate(long x, char oper, long y) {
         return switch (oper) {
             case '+' -> x + y;
             case '-' -> x - y;
             case '*' -> x * y;
             case '/' -> {
                 if (y == 0) {
-                    System.out.println("0으로 나눌 수 없으므로 x를 반환합니다");
+//                    System.out.println("0으로 나눌 수 없으므로 x를 반환합니다");
                     yield 'x';
                 }
                 yield x / (double) y;
