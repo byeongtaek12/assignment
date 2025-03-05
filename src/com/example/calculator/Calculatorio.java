@@ -4,11 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculatorio {
-    Calculator cal = new Calculator();
-    Scanner scanner = new Scanner(System.in);
-    long x;
-    long y;
-    Number result;
+    private final Calculator cal = new Calculator();
+    private final Scanner scanner = new Scanner(System.in);
+    private Number result;
 
     public void calculate() {
         calculatorIO();
@@ -16,6 +14,8 @@ public class Calculatorio {
     }
 
     private void calculatorIO() {
+        long x;
+        long y;
         while (true) {
             try {
                 System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
