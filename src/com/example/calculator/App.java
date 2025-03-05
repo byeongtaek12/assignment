@@ -8,7 +8,7 @@ public class App {
             calculatorio.longInput();
             calculatorio.operationInput();
             calculatorio.resultSaveInput();
-            calculatorio.exitInput();
+            exit = calculatorio.exitInput();
         }
     }
 }

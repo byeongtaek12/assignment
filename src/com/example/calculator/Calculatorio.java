@@ -18,6 +18,7 @@ public class Calculatorio {
                 y = scanner.nextLong();
                 if (x < 0 || y < 0) {
                     System.out.println("음수를 적으셨습니다. 다시 입력해주세요.");
+                    continue;
                 }
                 break;
             } catch (InputMismatchException e) {
@@ -45,8 +46,15 @@ public class Calculatorio {
     public void resultSaveInput() {
         boolean flag = true;
         while (flag) {
-            System.out.println("값 저장(0), 값 삭제(1), 값 조회(2), 넘어가기(아무거나 입력)");
-            int num = scanner.nextInt();
+            System.out.println("값 저장(0), 값 삭제(1), 값 조회(2), 넘어가기(아무거나 숫자 입력)");
+            int num;
+            try {
+                num = scanner.nextInt();
+            }catch (InputMismatchException e){
+                scanner.nextLine();
+                System.out.println("숫자만 넣어주세요");
+                continue;
+            }
             switch (num) {
                 case 0 -> cal.setResultSave(result);
                 case 1 -> {
