@@ -10,7 +10,12 @@ public class Calculatorio {
     long y;
     Number result;
 
-    public void calculatorIO() {
+    public void calculate() {
+        calculatorIO();
+        resultSaveIO();
+    }
+
+    private void calculatorIO() {
         while (true) {
             try {
                 System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
@@ -41,7 +46,7 @@ public class Calculatorio {
         }
     }
 
-    public void resultSaveIO() {
+    private void resultSaveIO() {
         boolean flag = true;
         while (flag) {
             System.out.println("값 저장(0), 값 삭제(1), 값 조회(2), 넘어가기(아무거나 숫자 입력)");
