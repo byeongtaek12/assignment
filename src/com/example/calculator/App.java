@@ -5,10 +5,10 @@ public class App {
         Calculatorio calculatorio = new Calculatorio();
         boolean exit = true;
         while (exit) {
-            calculatorio.longInput();
-            calculatorio.operationInput();
-            calculatorio.resultSaveInput();
-            exit = calculatorio.exitInput();
+            calculatorio.longIO();
+            calculatorio.operationIO();
+            calculatorio.resultSaveIO();
+            exit = calculatorio.exitIO();
         }
     }
 }

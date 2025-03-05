@@ -9,7 +9,7 @@ public class Calculatorio {
     long x;
     long y;
     Number result;
-    public void longInput() {
+    public void longIO() {
         while (true) {
             try {
                 System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
@@ -28,7 +28,7 @@ public class Calculatorio {
         }
     }
 
-    public void operationInput() {
+    public void operationIO() {
         while (true) {
             try {
                 System.out.print("사칙연산 기호를 입력하세요: ");
@@ -43,7 +43,7 @@ public class Calculatorio {
 
     }
 
-    public void resultSaveInput() {
+    public void resultSaveIO() {
         boolean flag = true;
         while (flag) {
             System.out.println("값 저장(0), 값 삭제(1), 값 조회(2), 넘어가기(아무거나 숫자 입력)");
@@ -69,7 +69,7 @@ public class Calculatorio {
         }
     }
 
-    public boolean exitInput() {
+    public boolean exitIO() {
         scanner.nextLine();
         boolean exit=true;
         System.out.println("더 계산하시겠습니까? (exit 입력시 종료, 다른 입력시 계속)");
