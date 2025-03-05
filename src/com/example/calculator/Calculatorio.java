@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculatorio {
-    private final Calculator cal = new Calculator();
+    private final ArithmeticCalculator cal = new ArithmeticCalculator();
     private final Scanner scanner = new Scanner(System.in);
     private Number result;
 

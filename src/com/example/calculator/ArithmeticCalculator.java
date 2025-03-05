@@ -3,8 +3,9 @@ package com.example.calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
+public class ArithmeticCalculator {
     private final List<Number> resultSave = new ArrayList<>();
+    private OperatorType operatorType;
 
     public Number calculate(long x, char oper, long y) {
         return switch (oper) {
