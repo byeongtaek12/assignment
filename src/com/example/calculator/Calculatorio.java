@@ -9,7 +9,8 @@ public class Calculatorio {
     long x;
     long y;
     Number result;
-    public void longIO() {
+
+    public void calculatorIO() {
         while (true) {
             try {
                 System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
@@ -20,27 +21,24 @@ public class Calculatorio {
                     System.out.println("음수를 적으셨습니다. 다시 입력해주세요.");
                     continue;
                 }
-                break;
             } catch (InputMismatchException e) {
                 scanner.nextLine();
                 System.out.println("숫자만 입력해주세요");
+                continue;
             }
-        }
-    }
-
-    public void operationIO() {
-        while (true) {
-            try {
-                System.out.print("사칙연산 기호를 입력하세요: ");
-                char oper = scanner.next().charAt(0);
-                result = cal.calculate(x, oper, y); // 계산 값을 반환
-                System.out.println("계산 값: " + result);
-                break;
-            } catch (ArithmeticException | IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+            while (true) {
+                try {
+                    System.out.print("사칙연산 기호를 입력하세요: ");
+                    char oper = scanner.next().charAt(0);
+                    result = cal.calculate(x, oper, y); // 계산 값을 반환
+                    System.out.println("계산 값: " + result);
+                    break;
+                } catch (ArithmeticException | IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
             }
+            break;
         }
-
     }
 
     public void resultSaveIO() {
@@ -50,7 +48,7 @@ public class Calculatorio {
             int num;
             try {
                 num = scanner.nextInt();
-            }catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 scanner.nextLine();
                 System.out.println("숫자만 넣어주세요");
                 continue;
@@ -64,21 +62,20 @@ public class Calculatorio {
                     cal.removeResult();
                 }
                 case 2 -> System.out.println(cal.getResultSave());
-                default -> flag=false;
+                default -> flag = false;
             }
         }
     }
 
     public boolean exitIO() {
         scanner.nextLine();
-        boolean exit=true;
+        boolean exit = true;
         System.out.println("더 계산하시겠습니까? (exit 입력시 종료, 다른 입력시 계속)");
         String q = scanner.nextLine();
         if (q.equals("exit")) {
             System.out.println("종료하겠습니다");
-            exit=false;
+            exit = false;
         }
         return exit;
     }
-
 }

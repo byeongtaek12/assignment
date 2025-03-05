@@ -5,8 +5,7 @@ public class App {
         Calculatorio calculatorio = new Calculatorio();
         boolean exit = true;
         while (exit) {
-            calculatorio.longIO();
-            calculatorio.operationIO();
+            calculatorio.calculatorIO();
             calculatorio.resultSaveIO();
             exit = calculatorio.exitIO();
         }
