@@ -7,10 +7,10 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = true;
-        while (exit) {
+        while (exit) { // 가장 바깥 while문
             long x=0;
             long y=0;
-            while (true) {
+            while (true) { // 정수 입력 while문
                 try {
                     System.out.print("첫 번째 양의 정수(0 포함)를 입력해주세요: ");
                     x = scanner.nextLong();
@@ -30,7 +30,7 @@ public class App {
                 break;
             }
 
-            while (true) {
+            while (true) { // 사칙연산 while문
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 char z = scanner.next().charAt(0);
                 switch (z) {
