@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculator {
     private final List<Number> resultSave = new ArrayList<>();
 
-    public Number calculate(long x, char oper, long y) {
+    public Number calculate(long x, char oper, long y) { // 계산 메서드
         return switch (oper) {
             case '+' -> x + y;
             case '-' -> x - y;
@@ -23,15 +23,15 @@ public class Calculator {
     }
 
 
-    public List<Number> getResultSave() {
+    public List<Number> getResultSave() { // getter
         return this.resultSave;
     }
 
-    public void setResultSave(Number result) {
+    public void setResultSave(Number result) { // setter
         this.resultSave.add(result);
     }
 
-    public void removeResult() {
+    public void removeResult() { // 저장소 삭제 메서드
         if (resultSave.isEmpty()) {
             System.out.println("저장소가 비어있습니다");
         }

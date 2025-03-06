@@ -8,12 +8,12 @@ public class Calculatorio {
     private final Scanner scanner = new Scanner(System.in);
     private Number result;
 
-    public void calculate() {
+    public void calculate() { // 순서대로 실행
         calculatorIO();
         resultSaveIO();
     }
 
-    private void calculatorIO() {
+    private void calculatorIO() { // 계산 입출력
         long x;
         long y;
         while (true) {
@@ -46,7 +46,7 @@ public class Calculatorio {
         }
     }
 
-    private void resultSaveIO() {
+    private void resultSaveIO() { // 저장소 관련 입출력
         boolean flag = true;
         while (flag) {
             System.out.println("값 저장(0), 값 삭제(1), 값 조회(2), 넘어가기(아무거나 숫자 입력)");
@@ -72,7 +72,7 @@ public class Calculatorio {
         }
     }
 
-    public boolean exitIO() {
+    public boolean exitIO() { // 종료 관련 입출력
         scanner.nextLine();
         boolean exit = true;
         System.out.println("더 계산하시겠습니까? (exit 입력시 종료, 다른 입력시 계속)");
