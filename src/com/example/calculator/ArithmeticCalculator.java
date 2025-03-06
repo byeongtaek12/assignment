@@ -5,24 +5,22 @@ import java.util.List;
 
 public class ArithmeticCalculator {
     private final List<Number> resultSave = new ArrayList<>();
-    private OperatorType operatorType; // enum 적용 x
 
     public Number calculate(long x, char oper, long y) {
-        return switch (oper) {
-            case '+' -> x + y;
-            case '-' -> x - y;
-            case '*' -> x * y;
-            case '/' -> {
+        // enum 적용
+        OperatorType operatorType = OperatorType.fromChar(oper);
+        return switch (operatorType) {
+            case PLUS -> x + y;
+            case MINUS -> x - y;
+            case MULTIPLY-> x * y;
+            case DIVISION -> {
                 if (y == 0) {
                     throw new ArithmeticException("0으로 나눌 수 없습니다. 다시 입력해주세요");
                 }
                 yield x / (double) y;
             }
-            default -> throw new IllegalArgumentException("연산기호가 잘못됐습니다. 다시 입력해주세요");
-
         };
     }
-
 
     public List<Number> getResultSave() {
         return this.resultSave;
