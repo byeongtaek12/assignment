@@ -8,7 +8,7 @@ public class Calculatorio {
     private final Scanner scanner = new Scanner(System.in);
     private Number result;
 
-    public void calculate() {
+    public void calculateAndAboutResultSave() {
         calculatorIO();
         resultSaveIO();
     }
