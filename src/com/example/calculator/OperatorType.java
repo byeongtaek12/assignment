@@ -1,6 +1,6 @@
 package com.example.calculator;
 
-public enum OperatorType {
+public enum OperatorType { // enum 적용시키지 못했음
     PLUS('+'), MINUS('-'), MULTIPLY('*'), DIVISION('/');
 
     private final Character oper;

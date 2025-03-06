@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ArithmeticCalculator {
     private final List<Number> resultSave = new ArrayList<>();
-    private OperatorType operatorType;
+    private OperatorType operatorType; // enum 적용 x
 
     public Number calculate(long x, char oper, long y) {
         return switch (oper) {
